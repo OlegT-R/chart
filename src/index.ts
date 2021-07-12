@@ -1,8 +1,7 @@
-import {IBaseComponent} from "./types/component";
+import App from './components/app';
+import { initApp } from './models/initApp';
 
-import App from "./components/app";
-
-import { initApp } from "./models/initApp";
+import { IBaseComponent } from './types/component';
 
 const Main = (): IBaseComponent => {
   const initAppPromise = initApp();
@@ -12,7 +11,7 @@ const Main = (): IBaseComponent => {
   main.appendChild(app.html);
   return {
     html: main,
-    style: app.style
+    style: app.style,
   };
 };
 
