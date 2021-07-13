@@ -1,0 +1,81 @@
+{
+    "env": {
+        "browser": true,
+        "es6": true,
+        "jest": true
+    },
+    "extends": [
+        "eslint:recommended",
+        "plugin:sonarjs/recommended",
+        "plugin:@typescript-eslint/recommended",
+        "prettier"
+    ],
+    "globals": {
+        "Atomics": "readonly",
+        "SharedArrayBuffer": "readonly"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+        "project": "tsconfig.json",
+        "tsconfigRootDir": ".",
+        "createDefaultProgram": true
+    },
+    "plugins": ["@typescript-eslint", "sonarjs"],
+    "rules": {
+        "no-duplicate-imports": ["error", { "includeExports": true }], // disallow duplicate module imports
+        "sort-imports": "off",
+        "quotes": "off",
+        "import/extensions": "off",
+        "import/no-unresolved": "off",
+        "semi": "off",
+        "no-confusing-arrow": "off",
+        "arrow-body-style": "off",
+        "implicit-arrow-linebreak": "off",
+        "max-len": ["error", { "code": 160, "ignoreTemplateLiterals": true, "ignoreStrings": true }],
+        "no-unused-vars": "off",
+        "@typescript-eslint/no-unused-vars": [
+            "error",
+            {
+                "vars": "all",
+                "args": "after-used",
+                "ignoreRestSiblings": false
+            }
+        ],
+        "import/prefer-default-export": "off",
+        "no-plusplus": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/naming-convention": [
+            "error",
+            {
+                "selector": "interface",
+                "format": ["PascalCase"],
+                "custom": {
+                    "regex": "^I[A-Z]",
+                    "match": true
+                }
+            }
+        ],
+        "@typescript-eslint/ban-ts-ignore": "off",
+        "@typescript-eslint/no-magic-numbers": "off",
+        "@typescript-eslint/camelcase": "off",
+        "comma-dangle": ["error", "only-multiline"],
+        "jsx-a11y/anchor-is-valid": "off",
+        "no-nested-ternary": "off",
+        "sonarjs/no-identical-functions": "off",
+        "import/no-extraneous-dependencies": "off",
+        "import/export": "off",
+        "sonarjs/no-useless-catch": "off",
+        "@typescript-eslint/ban-ts-comment": "off",
+        "@typescript-eslint/no-var-requires": "off",
+        "no-use-before-define": "off",
+        "sonarjs/cognitive-complexity": "off",
+        // note you must disable the base rule as it can report incorrect errors
+        "no-shadow": "off",
+        "indent": "off",
+        "sonarjs/no-collapsible-if": "off",
+        "import/order": "off",
+        "@typescript-eslint/no-use-before-define": "off",
+        "@typescript-eslint/no-explicit-any": "off"
+    }
+}
